@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PesoPal - Overview</title>
+    <link rel="icon" type="image/png" href="assets/images/pesopal-logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img class="brand-logo" src="assets/images/pesopal-logo.png" alt="PesoPal logo">
+                <span>PesoPal</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link active" data-page="overview">Overview</a>
+                <a href="pages/transactions.html" class="nav-link" data-page="transactions">Transactions</a>
+                <a href="pages/budgets.html" class="nav-link" data-page="budgets">Budgets</a>
+                <a href="pages/savings.html" class="nav-link" data-page="savings">Savings Goals</a>
+                <a href="pages/reports.html" class="nav-link" data-page="reports">Reports &amp; Analytics</a>
+                <a href="pages/settings.html" class="nav-link" data-page="settings">Settings</a>
+                <a href="pages/help.html" class="nav-link" data-page="help">Help &amp; About</a>
+            </nav>
+            <div class="sidebar-profile">
+                <div class="profile-avatar" aria-hidden="true">SP</div>
+                <div class="profile-info">
+                    <span class="profile-name">Student</span>
+                    <span class="profile-balance">₱0.00</span>
+                    <a class="profile-edit-link" href="pages/settings.html">Edit profile</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Overview</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary btn-quick-add" id="quickAddBtn">
+                        <i data-lucide="plus"></i> Add Transaction
+                    </button>
+                    <button class="btn btn-icon btn-theme-toggle" id="themeToggleBtn">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <a class="header-profile" href="pages/settings.html" aria-label="Edit profile">
+                        <span class="profile-avatar header-profile-avatar">SP</span>
+                        <span class="profile-name">Student</span>
+                        <i data-lucide="chevron-down"></i>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dashboard content will be injected here -->
+            <div id="dashboard-content">
+                <!-- Placeholder -->
+                <p>Loading dashboard...</p>
+            </div>
+        </main>
+
+        <!-- Modal Container -->
+        <div id="modalContainer" class="modal-container"></div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/transactions.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/overview.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

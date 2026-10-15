@@ -1,0 +1,101 @@
+/* Responsive design overrides */
+
+.transaction-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.transaction-filters label { display: grid; gap: 0.35rem; color: var(--secondary-text); font-size: 0.875rem; }
+.transaction-filters input, .transaction-filters select { min-width: 0; width: 100%; padding: 0.7rem 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--main-surface); color: var(--main-text); }
+.transaction-filters :focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--primary-green); outline-offset: 2px; }
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Adjust header for mobile */
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        align-self: flex-end;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .sidebar-logo {
+        justify-content: center;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+        justify-content: center;
+    }
+
+    .nav-link span {
+        display: none;
+    }
+
+    .sidebar-profile {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .sidebar-profile img, .profile-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-item .transaction-info {
+        min-width: 100%;
+    }
+
+    .transaction-item .transaction-amount {
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+
+    .modal {
+        width: 95%;
+        margin: 0.5rem;
+    }
+
+    .transaction-filters { grid-template-columns: 1fr 1fr; }
+    .transaction-filters label:first-child { grid-column: 1 / -1; }
+    .modal-content { width: calc(100vw - 1rem); max-height: calc(100dvh - 1rem); }
+}
